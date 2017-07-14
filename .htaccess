@@ -1,0 +1,22 @@
+<ifModule mod_rewrite.c>
+    RewriteEngine On
+
+    # redirect requests for images to the dist/images folder
+    RewriteRule ^images/(.*)$ /dist/images/$1 [NC,L]
+
+    # redirect requests for css to the dist/css folder
+    RewriteRule ^css/(.*)$ /dist/css/$1 [NC,L]
+
+    # redirect requests for js to the dist/js folder
+    RewriteRule ^js/(.*)$ /dist/js/$1 [NC,L]
+
+    # redirect requests for fonts to the dist/fonts folder
+    RewriteRule ^fonts/(.*)$ /dist/fonts/$1 [NC,L]
+
+    # redirect all non-file, non-directory requests to index page
+    #RewriteCond %{REQUEST_FILENAME} !-f
+    #RewriteCond %{REQUEST_FILENAME} !-d
+    #RewriteCond %{REQUEST_URI} !index
+
+    #RewriteRule (.*) /index.php?q=$1 [L]
+</ifModule>
