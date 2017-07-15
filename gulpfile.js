@@ -91,9 +91,12 @@ function javascripts(){
 }
 
 
-// --- minify html for production
+// --- combine and minify html
 const configHTML = [
 	'src/html/head.html',
+	'src/html/topbar.html',
+	'src/html/home-slider.html',
+	'src/html/footer.html',
 	'src/html/end.html'
 ];
 

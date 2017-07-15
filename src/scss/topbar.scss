@@ -1,0 +1,15 @@
+#main_menu {
+	.submenu-level-one,
+	.submenu-level-two {
+		display: none;
+	}
+}
+
+@include breakpoint(medium) {
+	#main_menu {
+		.submenu-level-one,
+		.submenu-level-two {
+			display: block;
+		}
+	}
+}

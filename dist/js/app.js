@@ -30342,6 +30342,14 @@ module.exports = __webpack_require__(19);
 
 /***/ })
 /******/ ]);
+"use strict";
+
+(function ($) {
+	$(document).ready(function () {
+		// initialize Foundation
+		$(document).foundation();
+	});
+})(jQuery);
 'use strict';
 
 (function ($) {
