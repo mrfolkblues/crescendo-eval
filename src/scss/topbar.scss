@@ -5,6 +5,12 @@
 	}
 }
 
+#language_select {
+	background-image: url('../images/icon-english.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
 @include breakpoint(medium) {
 	#main_menu {
 		.submenu-level-one,
