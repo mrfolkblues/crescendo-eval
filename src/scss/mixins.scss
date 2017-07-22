@@ -1,0 +1,7 @@
+@mixin gradient($color-top, $color-bottom) {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#91a6ce+0,91a6ce+50,6390c6+50,6390c6+100 */
+	background-color: $color-top; /* Old browsers */
+	background-image: -moz-linear-gradient(top, $color-top 0%, $color-bottom 100%); /* FF3.6-15 */
+	background-image: -webkit-linear-gradient(top, $color-top 0%, $color-bottom 100%); /* Chrome10-25,Safari5.1-6 */
+	background-image: linear-gradient(to bottom, $color-top 0%, $color-bottom 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}

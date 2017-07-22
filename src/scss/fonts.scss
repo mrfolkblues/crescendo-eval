@@ -1,0 +1,60 @@
+@font-face {
+	font-family: 'Gotham';
+	src: url('../fonts/gotham/gotham-light.ttf')  format('truetype'); /* Safari, Android, iOS */
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gotham';
+	src: url('../fonts/gotham/gotham-medium.ttf')  format('truetype'); /* Safari, Android, iOS */
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gotham';
+	src: url('../fonts/gotham/gotham-bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Trebuchet';
+	src: url('../fonts/trebuchet/Trebuchet MS.ttf')  format('truetype'); /* Safari, Android, iOS */
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Trebuchet';
+	src: url('../fonts/trebuchet/Trebuchet MS Italic.ttf')  format('truetype'); /* Safari, Android, iOS */
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Trebuchet';
+	src: url('../fonts/trebuchet/Trebuchet MS Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Trebuchet';
+	src: url('../fonts/trebuchet/Trebuchet MS Bold Italic.ttf')  format('truetype'); /* Safari, Android, iOS */
+	font-weight: 700;
+	font-style: italic;
+}
+
+@mixin gotham(){
+	font-family: 'Gotham', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@mixin trebuchet(){
+	font-family: 'Trebuchet', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@mixin fontawesome(){
+	font-family: 'FontAwesome';
+}
