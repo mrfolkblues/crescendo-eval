@@ -44,19 +44,123 @@
 	list-style: none;
 	background-color: transparent;
 	margin: 0;
+	@include gotham;
 }
 
 #main_menu {
+	width: 100%;
+	border-bottom: 1px solid $light-gray;
+	margin-bottom: 1em;
+	padding-bottom: 0.5em;
+
 	.submenu-level-one,
 	.submenu-level-two {
 		display: none;
 	}
+
+	li {
+		padding: 0.5em 0;
+
+		a {
+			color: $dark-gray;
+		}
+	}
+}
+
+#secondary_menu {
+	border-bottom: 1px solid $light-gray;
+	margin-bottom: 1em;
+	padding-bottom: 0.5em;
+
+	li {
+		padding: 0.5em 0;
+	}
+
+	a {
+		color: $medium-gray;
+	}
+} 
+
+.menu-contents,
+#menu_secondary_items {
+	width: 100%;
 }
 
 #language_select {
+	width: auto;
 	background-image: url('../images/icon-english.png');
 	background-size: contain;
 	background-repeat: no-repeat;
+	padding-left: 28px;
+	min-height: rem-calc(28);
+	line-height: rem-calc(28);
+	cursor: pointer;
+
+	&:after {
+		content: "";
+		@include fontawesome;
+		margin-left: 0.25em;
+	}
+
+	&:hover {
+		color: $dark-gray;
+	}
+}
+
+#search {
+	width: 100%;
+	@include clearfix;
+	border-top: 1px solid $light-gray;
+	margin-top: 1em;
+	padding-top: 1em;
+	border-bottom: 1px solid $light-gray;
+	margin-bottom: 1em;
+	padding-bottom: 1em;
+
+	input {
+		border: 2px solid $medium-gray;
+		padding: 0 0.5em;
+		width: 90%;
+		max-width: 100%;
+		height: rem-calc(30);
+		margin: 0;
+		float: left;
+	}
+
+	button {
+		width: rem-calc(30);
+		height: rem-calc(30);
+		background-color: $primary-color;
+		color: $white;
+		border-radius: rem-calc(15);
+		position: relative;
+		float: right;
+		cursor: pointer;
+
+		i {
+			position: absolute;
+			left: 43%;
+			top: 22%;
+		}
+	}
+}
+
+#locator_account_menu {
+	li {
+		padding: 0.5em 0;
+	}
+
+	i {
+		display: none;
+	}
+
+	a {
+		color: $medium-gray;
+	}
+
+	#locator {
+		display: none;
+	}
 }
 
 @include breakpoint(medium) {
@@ -81,19 +185,21 @@
 
 	#main_menu {
 		position: absolute;
+		width: auto;
 		left: rem-calc(100);
 		bottom: rem-calc(5);
-		@include gotham;
 		@include clearfix;
 		font-size: rem-calc(13);
+		border-bottom: none;
+		margin-bottom: 0;
+		padding-bottom: 0;
 
 		li {
 			float: left;
 			margin-right: 3em;
+			padding: 0;
 
 			a {
-				color: $dark-gray;
-
 				&:after {
 					content: "";
 					@include fontawesome;
@@ -119,21 +225,150 @@
 
 	#menu_secondary_items {
 		position: absolute;
+		width: auto;
 		right: 0;
-		top: 0;
+		top: rem-calc(5);
+		@include clearfix;
+
+		#secondary_menu,
+		#language_select,
+		#search {
+			float: left;
+		}
+
+		#secondary_menu {
+			font-size: rem-calc(10);
+			padding-right: rem-calc(15);
+			border-right: 1px solid $light-gray;
+			border-bottom: none;
+			margin-bottom: 0;
+			padding-bottom: 0;
+
+			li {
+				float: left;
+				margin-left: 2.5em;
+				min-height: rem-calc(20);
+				line-height: rem-calc(20);
+				padding: 0;
+			}
+
+			a {
+				color: $medium-gray;
+
+				&:hover {
+					color: $dark-gray;
+				}
+			}
+		}
+
+		#language_select,
+		#search input {
+			color: $medium-gray;
+			font-size: rem-calc(10);
+		}
+
+		#language_select {
+			margin-left: rem-calc(15);
+			padding-left: 20px;
+			min-height: rem-calc(20);
+			line-height: rem-calc(20);
+		}
+
+		#search {
+			width: rem-calc(190);
+			margin-left: rem-calc(15);
+			border-top: none;
+			margin-top: 0;
+			padding-top: 0;
+			border-bottom: none;
+			margin-bottom: 0;
+			padding-bottom: 0;
+
+			input {
+				height: rem-calc(20);
+				padding: 0 0.5em;
+				width: rem-calc(160);
+			}
+
+			button {
+				width: rem-calc(20);
+				height: rem-calc(20);
+				border-radius: rem-calc(10);
+				
+				i {
+					left: 41%;
+					top: 10%;
+				}
+			}
+		}
 	}
 
 	#locator_account_menu {
 		position: absolute;
 		right: 0;
 		bottom: 0;
+		width: rem-calc(100);
 
 		ul {
 			@include gradient(#cccccc, #8d8d8d);
+			@include clearfix;
+			width: 100%;
+			height: rem-calc(21);
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+
+			li {
+				float: left;
+				font-size: rem-calc(10);
+				text-align: center;
+				width: 50%;
+				padding: rem-calc(4) 0 0 0;
+
+				&:nth-of-type(odd){
+					border-right: 1px solid #9d9d9d;
+				}
+
+				&:nth-of-type(even){
+					border-left: 1px solid #bbbbbb;
+				}
+			}
+
+			i {
+				display: inline;
+			}
+
+			a {
+				color: $black;
+
+				span {
+					display: none;
+				}
+			}
 		}
 
 		#locator {
 			@include gradient(#757575, #505050);
+			display: block;
+			height: 0;
+			overflow: hidden;
+		}
+	}
+}
+
+@include breakpoint(rem-calc(900)) {
+	#locator_account_menu {
+		width: rem-calc(240);
+
+		ul {
+			a {
+				i {
+					display: none;
+				}
+
+				span {
+					display: inline;
+				}
+			}
 		}
 	}
 }

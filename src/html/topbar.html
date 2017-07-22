@@ -1,4 +1,4 @@
-<div class="title-bar" data-responsive-toggle="mobile_menu">
+<div class="title-bar" data-responsive-toggle="mobile_menu" data-hide-for="medium">
 	<a href="/" class="logo"><img src="/images/logo.png"></a>
 	<i class="fa fa-bars menu-toggle" data-toggle="mobile_menu"></i>
 </div>
@@ -114,21 +114,21 @@
 
 			<form id="search" action="" method="post">
 				<input type="text" name="terms" placeholder="Search...">
-				<button type="submit">Go</button>
+				<button type="submit"><i class="fa fa-caret-right"></i></button>
 			</form>
+		</div>
 
-			<div id="locator_account_menu">
-				<ul>
-					<li><a class="menu-item">Where to Buy</a></li>
-					<li><a class="menu-item">My Account</a></li>
-				</ul>
+		<div id="locator_account_menu">
+			<ul>
+				<li><a class="menu-item"><i class="fa fa-map-marker"></i><span>Where to Buy</span></a></li>
+				<li><a class="menu-item"><i class="fa fa-user"></i><span>My Account</span></a></li>
+			</ul>
 
-				<form id="locator" action="" method="post">
-					<input type="text" name="zip_code" id="zip_code">
-					<button type="submit">Go</button>
-					<label for="zip_code">Enter ZIP Code</label>
-				</form>
-			</div>
+			<form id="locator" action="" method="post">
+				<input type="text" name="zip_code" id="zip_code">
+				<button type="submit">Go</button>
+				<label for="zip_code">Enter ZIP Code</label>
+			</form>
 		</div>
 	</div>
 </nav>
