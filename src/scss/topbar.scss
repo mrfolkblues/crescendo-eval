@@ -3,7 +3,6 @@
 	position: relative;
 	z-index: 99;
 	@include clearfix;
-	border-bottom: 1px solid #c5c5c5;
 
 	.logo {
 		display: block;
@@ -52,11 +51,6 @@
 	border-bottom: 1px solid $light-gray;
 	margin-bottom: 1em;
 	padding-bottom: 0.5em;
-
-	.submenu-level-one,
-	.submenu-level-two {
-		display: none;
-	}
 
 	li {
 		padding: 0.5em 0;
@@ -163,6 +157,11 @@
 	}
 }
 
+.submenu-level-one,
+.submenu-level-two {
+	display: none;
+}
+
 @include breakpoint(medium) {
 	.top-bar {
 		@include gradient($white, #f3f3f3);
@@ -206,20 +205,6 @@
 					margin-left: 0.25em;
 				}
 			}
-		}
-
-		.submenu-level-one,
-		.submenu-level-two {
-			display: block;
-			width: 100%;
-			height: 0;
-			overflow: hidden;
-		}
-
-		.submenu-level-one {
-			position: absolute;
-			left: 0;
-			bottom: -1px;
 		}
 	}
 
@@ -352,6 +337,40 @@
 			height: 0;
 			overflow: hidden;
 		}
+	}
+
+	.submenu-contents {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 100%;
+		border-bottom: 1px solid rgba(0,0,0,0.3);
+	}
+
+	.submenu-level-one,
+	.submenu-level-two {
+		display: block;
+		width: 100%;
+		// height: 0;
+		overflow: hidden;
+		background-color: rgba(255,255,255,0.9);
+
+		ul {
+			margin: 0;
+			list-style: none;
+			background: transparent;
+			@include grid-row();
+
+			li {
+				@include grid-column(12/7);
+				@include grid-column-end();
+				text-align: center;
+			}
+		}
+	}
+
+	.submenu-level-one {
+		
 	}
 }
 
