@@ -157,11 +157,6 @@
 	}
 }
 
-.submenu-level-one,
-.submenu-level-two {
-	display: none;
-}
-
 @include breakpoint(medium) {
 	.top-bar {
 		@include gradient($white, #f3f3f3);
@@ -203,6 +198,14 @@
 					content: "";
 					@include fontawesome;
 					margin-left: 0.25em;
+				}
+
+				&.current {
+					color: $black;
+
+					&:after {
+						color: $primary-color;
+					}
 				}
 			}
 		}
@@ -351,7 +354,7 @@
 	.submenu-level-two {
 		display: block;
 		width: 100%;
-		// height: 0;
+		height: 0;
 		overflow: hidden;
 		background-color: rgba(255,255,255,0.9);
 
@@ -362,15 +365,49 @@
 			@include grid-row();
 
 			li {
-				@include grid-column(12/7);
+				@include grid-column(12/4);
 				@include grid-column-end();
-				text-align: center;
+				border-bottom: 8px solid transparent;
+				opacity: 0.7;
+
+				&.current,
+				&:hover {
+					border-bottom: 8px solid $primary-color;
+					opacity: 1;
+				}
+
+				a {
+					display: block;
+					width: 100%;
+					text-align: center;
+					padding-top: rem-calc(16);
+					padding-bottom: rem-calc(16);
+
+					img,
+					.label {
+						display: block;
+						margin-left: auto;
+						margin-right: auto;
+					}
+
+					.label {
+						background: transparent;
+						color: $black;
+						@include gotham;
+						font-size: rem-calc(10);
+						padding: 0;
+						margin-top: rem-calc(8);
+						cursor: pointer;
+					}
+				}
 			}
 		}
 	}
 
 	.submenu-level-one {
-		
+		&.submenu-open {
+			background-color: rgba(255,255,255,1);
+		}
 	}
 }
 
@@ -395,5 +432,13 @@
 @include breakpoint(large) {
 	#main_menu {
 		left: 12%;
+	}
+
+	.submenu-level-one,
+	.submenu-level-two {
+		ul li {
+			@include grid-column(12/7);
+			@include grid-column-end();
+		}
 	}
 }
