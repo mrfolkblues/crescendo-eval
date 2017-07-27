@@ -6,5 +6,6 @@
 		// initialize custom features
 		initResize();
 		initTopbar();
+		initSlider('.custom-slider');
 	});
 })(jQuery);

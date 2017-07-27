@@ -17,6 +17,20 @@ function onResize(){
 	window.breakpoint = 700;
 
 	// Resize things
+
+	// equalize box heights
+	$('#slider_overlay_menu li .box').css({
+		height: 'auto'
+	});
+
+	var maxHeight = 0;
+	$('#slider_overlay_menu li .box').each(function(){
+		maxHeight = Math.max(maxHeight, $(this).outerHeight());
+	});
+
+	$('#slider_overlay_menu li .box').css({
+		height: maxHeight
+	});
 }
 
 function mobileAndTabletcheck(){
