@@ -30382,14 +30382,16 @@ function onResize() {
 		height: 'auto'
 	});
 
-	var maxHeight = 0;
-	$('#slider_overlay_menu li .box').each(function () {
-		maxHeight = Math.max(maxHeight, $(this).outerHeight());
-	});
+	setTimeout(function () {
+		var maxHeight = 0;
+		$('#slider_overlay_menu li .box').each(function () {
+			maxHeight = Math.max(maxHeight, $(this).outerHeight());
+		});
 
-	$('#slider_overlay_menu li .box').css({
-		height: maxHeight
-	});
+		$('#slider_overlay_menu li .box').css({
+			height: maxHeight
+		});
+	}, 100);
 }
 
 function mobileAndTabletcheck() {
