@@ -1,0 +1,163 @@
+footer {
+	#footer_upper,
+	#footer_lower {
+		@include grid-row();
+		color: $medium-gray;
+	}
+
+	#footer_upper {
+		border-bottom: 1px solid $light-gray;
+		padding-bottom: rem-calc(15);
+		margin-bottom: rem-calc(15);
+	}
+
+	#mailing_list,
+	#social_links,
+	#footer_nav,
+	#legal_nav,
+	.copyright {
+		@include grid-column();
+	}
+
+	#social_links,
+	#footer_nav,
+	#legal_nav,
+	.copyright {
+		font-size: rem-calc(10);
+	}
+
+	#social_links,
+	#footer_nav {
+		a {
+			color: $medium-gray;
+		}
+
+		a:hover {
+			color: $dark-gray;
+		}
+	}
+
+	#footer_nav,
+	#legal_nav {
+		margin: 0;
+		list-style: none;
+	}
+
+	#mailing_list {
+		margin-bottom: rem-calc(15);
+
+		label {
+			@include gotham;
+			font-size: rem-calc(10);
+			font-weight: 700;
+			color: $black;
+			text-transform: uppercase;
+		}
+
+		input {
+			border: 2px solid $primary-color;
+			padding: 0 0.5em;
+			width: rem-calc(200);
+			max-width: 100%;
+			height: rem-calc(20);
+			margin: 0;
+			float: left;
+			font-size: rem-calc(10);
+		}
+
+		button {
+			width: rem-calc(20);
+			height: rem-calc(20);
+			border-radius: rem-calc(10);
+			background-color: $primary-color;
+			color: $white;
+			position: relative;
+			float: left;
+			cursor: pointer;
+			margin-left: rem-calc(10);
+			
+			i {
+				display: inline-block;
+				position: absolute;
+				left: 41%;
+				top: 10%;
+			}
+		}
+	}
+
+	#social_links {
+		.tweet-text {
+			a {
+				color: $secondary-color;
+			}
+		}
+
+		.fa-twitter-square,
+		.fa-facebook-square {
+			font-size: 20px;
+			transform: translateY(3px);
+			margin-left: 0.25em;
+		}
+	}
+
+	#footer_nav {
+		margin-bottom: rem-calc(15);
+	}
+
+	#legal_nav {
+		margin-bottom: rem-calc(15);
+	}
+}
+
+@include breakpoint(medium){
+	footer {
+		#mailing_list {
+			@include clearfix;
+			@include grid-column(7);
+			margin-bottom: 0;
+
+			label {
+				line-height: rem-calc(24);
+				margin-right: 1em;
+			}
+
+			label,
+			input,
+			button {
+				float: left;
+			}
+		}
+
+		#social_links {
+			text-align: right;
+			@include grid-column(5);
+		}
+
+		#footer_nav {
+			@include grid-column(7);
+			margin-bottom: 0;
+
+			li {
+				display: inline-block;
+				margin-right: 1.5em;
+			}
+		}
+
+		#legal_nav {
+			@include grid-column(5);
+			margin-bottom: 0;
+			text-align: right;
+
+			li {
+				display: inline-block;
+				margin-left: 1.5em;
+			}
+		}
+	}
+}
+
+@include breakpoint(rem-calc(960)){
+	footer {
+		padding: rem-calc(15) 0;
+	}
+}
